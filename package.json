@@ -1,0 +1,72 @@
+{
+  "name": "Switch RPCX",
+  "version": "1.0.0",
+  "description": "Discord rich presence for Nintendo Switch",
+  "main": "./main.js",
+  "homepage": "./",
+  "scripts": {
+    "start": "concurrently \"npm run react-start\" \"npm run server-start\" \"wait-on http://localhost:3000 && npm run electron-dev\"",
+    "react-build": "react-scripts build",
+    "react-start": "react-scripts start",
+    "server-build": "babel server --out-dir build-server",
+    "server-start": "nodemon --watch server --exec babel-node server/server.js",
+    "electron-dev": "node scripts/dev.js scripts/start.js",
+    "electron-pack": "electron-builder -c.extraMetadata.main='./main.js'",
+    "preelectron-pack": "npm run react-build && npm run server-build"
+  },
+  "author": "Ross Hunter",
+  "devDependencies": {
+    "customize-cra": "^1.0.0",
+    "react-scripts": "^5.0.0",
+    "concurrently": "^7.0.0",
+    "wait-on": "^6.0.1",
+    "electron": "^17.1.2",
+    "electron-builder": "^22.14.13",
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11"
+  },
+  "dependencies": {
+    "app-module-path": "^2.2.0",
+    "axios": "^0.26.1",
+    "cors": "^2.8.5",
+    "electron-is-dev": "^2.0.0",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15",
+    "piping": "^1.0.0-rc.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "build": {
+    "appId": "com.electron-react-node",
+    "files": [
+      "build/**/**/*",
+      "build-server/**/**/*",
+      "node_modules/**/*",
+      "./main.js"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "not dead"
+  ],
+  "keywords": [
+    "electron",
+    "switch",
+    "nintendo",
+    "nintendoswitch",
+    "discord",
+    "react",
+    "reactapp",
+    "games",
+    "switchrpc",
+    "switchrpcx",
+    "nintendorpcx",
+    "discordrpc"
+  ]
+}
