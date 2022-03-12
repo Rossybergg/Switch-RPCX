@@ -28,7 +28,7 @@ const App = () => {
       <p>Fetched api response from server: {successText}</p>
       <p>Status updated?: {successText2}</p>
       <Button
-        onClick={() => {alert('hi')}}
+        onClick={() => {updateStatus()}}
         variant="contained">Hello World</Button>
     </StyledApp>
 )

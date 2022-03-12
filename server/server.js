@@ -2,7 +2,7 @@ import appModulePath from 'app-module-path';
 import http from 'http';
 import express from 'express';
 import cors from 'cors';
-const routes = require('./routes')
+import routes from './routes'
 import { discordLogin, updateStatus, client } from '../src/services/discord/DiscordService';
 
 appModulePath.addPath(`${__dirname}`);
