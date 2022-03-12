@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import {api} from './api';
+import { StatusData } from './interfaces/statusData';
 
 const App = () => {
-  const [successText, setSuccessText] = useState(null);
-  const [successText2, setSuccessText2] = useState('');
-  const [selectedGame, setSelectedGame] = useState({game: 'Mario Kart 8 Deluxe', image: 'mk8'});
+  const [successText, setSuccessText] = useState<string>('');
+  const [successText2, setSuccessText2] = useState<string>('');
+  const [selectedGame, setSelectedGame] = useState<StatusData>({game: 'Mario Kart 8 Deluxe', image: 'mk8'});
 
   useEffect(() => {
     api.get('/keepalive')
