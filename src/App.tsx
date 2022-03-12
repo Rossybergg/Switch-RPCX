@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {api} from './api';
 import { StatusData } from './interfaces/statusData';
+import Button from '@mui/material/Button';
+import { StyledApp } from './styles/App.styles';
 
 const App = () => {
   const [successText, setSuccessText] = useState<string>('');
@@ -21,18 +23,14 @@ const App = () => {
   }
 
   return (
-    <div>
+    <StyledApp>
       <h2>Electron is running!</h2>
       <p>Fetched api response from server: {successText}</p>
       <p>Status updated?: {successText2}</p>
-      <button
-        onClick={() => {
-          updateStatus()
-        }}
-      >
-        Click ME
-      </button>
-    </div>
+      <Button
+        onClick={() => {alert('hi')}}
+        variant="contained">Hello World</Button>
+    </StyledApp>
 )
   ;
 };
