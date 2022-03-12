@@ -1,5 +1,5 @@
 {
-  "name": "Switch RPCX",
+  "name": "switchrpcsx",
   "version": "1.0.0",
   "description": "Discord rich presence for Nintendo Switch",
   "main": "./main.js",
@@ -30,6 +30,7 @@
   "dependencies": {
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.5.0",
     "@mui/material": "^5.5.0",
     "app-module-path": "^2.2.0",
     "axios": "^0.26.1",
@@ -46,6 +47,13 @@
   },
   "build": {
     "appId": "com.electron-react-node",
+    "win": {
+      "icon": "build/icon.png"
+    },
+    "mac": {
+      "icon": "build/icon.icns",
+      "category": "public.app-category.utilities"
+    },
     "files": [
       "build/**/**/*",
       "build-server/**/**/*",
