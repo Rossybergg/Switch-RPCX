@@ -7,13 +7,15 @@ const App = () => {
   const [selectedGame, setSelectedGame] = useState({game: 'Mario Kart 8 Deluxe', image: 'mk8'});
 
   useEffect(() => {
-    api.get('/test')
-      .then(({ data }) => setSuccessText(data))
+    api.get('/keepalive')
+      .then((response => {
+        setSuccessText(response.data.status.toString())
+      }))
       .catch(err => console.error(err));
-  });
+  }, []);
 
   const updateStatus = () => {
-    api.post('/updateStatus', selectedGame).then(({data}) => { setSuccessText2(data) })
+    api.post('/status/update', selectedGame).then(({data}) => { setSuccessText2(data) })
       .catch( (error) => {console.log(error)})
   }
 
