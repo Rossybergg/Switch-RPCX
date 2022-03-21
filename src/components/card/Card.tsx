@@ -4,11 +4,17 @@ import { CardProps } from './Card.types';
 import { StyledCard } from './Card.styles';
 
 export const Card = (props: CardProps) => {
-  const { title, imageSrc, onClick } = props;
+  const { title, imageSrc, image, onClick } = props;
 
   return (
     <Tooltip title={title}>
-      <StyledCard alt="game" src={imageSrc} onClick={onClick} />
+      <StyledCard
+        alt="game"
+        src={imageSrc}
+        onClick={() => {
+          onClick(title, image);
+        }}
+      />
     </Tooltip>
   );
 };

@@ -1,4 +1,4 @@
 export interface StatusData {
-  game: string;
+  title: string;
   image: string;
 }

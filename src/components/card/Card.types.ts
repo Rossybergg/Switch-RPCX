@@ -1,5 +1,6 @@
 export interface CardProps {
   title: string;
   imageSrc: string;
-  onClick: () => void;
+  image: string;
+  onClick: (title: string, image: string) => void;
 }

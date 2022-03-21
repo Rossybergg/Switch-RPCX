@@ -1,12 +1,12 @@
-import { updateStatus } from '../../src/services/discord/DiscordService';
+import { updateStatus } from '../server';
 
 const router = require('express').Router();
 
 router.post('/update', (req, res) => {
-  const { game, image } = req.body;
+  const { title, image } = req.body;
 
   try {
-    updateStatus(game, image);
+    updateStatus(title, image);
     res.status(200).send('Status updated');
   } catch (error) {
     res.status(500).send(error);

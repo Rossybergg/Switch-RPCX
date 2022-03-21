@@ -13,10 +13,7 @@ import { baseGameData } from './constants/baseGameData';
 const App = () => {
   const [successText, setSuccessText] = useState<string>('');
   const [successText2, setSuccessText2] = useState<string>('');
-  const [selectedGame, setSelectedGame] = useState<StatusData>({
-    game: 'Assassins Creed: The Ezio Collection',
-    image: 'ezio',
-  });
+  const [selectedGame, setSelectedGame] = useState<StatusData>({ image: '', title: '' });
 
   useEffect(() => {
     api
@@ -27,15 +24,21 @@ const App = () => {
       .catch((err) => console.error(err));
   }, []);
 
-  const updateStatus = () => {
-    api
-      .post('/status/update', selectedGame)
-      .then(({ data }) => {
-        setSuccessText2(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  useEffect(() => {
+    if (selectedGame.title !== '') {
+      api
+        .post('/status/update', selectedGame)
+        .then(({ data }) => {
+          setSuccessText2(data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }, [selectedGame]);
+
+  const updateStatus = (title, image) => {
+    setSelectedGame({ title, image });
   };
 
   const horizontalScroll = (e) => {
@@ -58,19 +61,17 @@ const App = () => {
             imageSrc={
               'https://images.nintendolife.com/d0ae00f3e7408/legend-of-zelda-skyward-sword-hd-cover.cover_300x.jpg'
             }
-            onClick={() => {
-              updateStatus();
-            }}
+            image={'mk8'}
+            onClick={updateStatus}
           />
         </div>
         <div className="card-container" onWheel={horizontalScroll}>
           {baseGameData.newGames.map((game) => (
             <Card
               title={game.title}
+              image={game.image}
               imageSrc={game.cover}
-              onClick={() => {
-                updateStatus();
-              }}
+              onClick={updateStatus}
             />
           ))}
         </div>
