@@ -1,4 +1,4 @@
-import { updateStatus } from '../server';
+import { updateStatus } from '../services/discord/DiscordService';
 
 const router = require('express').Router();
 
