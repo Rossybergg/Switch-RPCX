@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { StyledHeader } from './Header.styles';
-import logo from '../../assets/images/logo.png';
 import WifiIcon from '@mui/icons-material/Wifi';
 import Avatar from '@mui/material/Avatar';
+import { StyledHeader } from './Header.styles';
+import logo from '../../assets/images/logo.png';
 
 export const Header = () => {
-
   const [dateState, setDateState] = useState(new Date());
+
   useEffect(() => {
     setInterval(() => setDateState(new Date()), 30000);
   }, []);
-
 
   return (
     <StyledHeader>
@@ -25,8 +24,8 @@ export const Header = () => {
         })}
       </div>
       <div className="connection-container">
-        <WifiIcon/>
+        <WifiIcon />
       </div>
     </StyledHeader>
-  )
-}
+  );
+};

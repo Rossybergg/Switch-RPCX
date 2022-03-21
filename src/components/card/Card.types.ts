@@ -1,4 +1,4 @@
 export interface CardProps {
-  imageSrc: string
+  imageSrc: string;
   onClick: () => void;
 }

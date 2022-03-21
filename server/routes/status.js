@@ -1,8 +1,9 @@
-const router = require('express').Router();
 import { updateStatus } from '../../src/services/discord/DiscordService';
 
+const router = require('express').Router();
+
 router.post('/update', (req, res) => {
-  const {game, image} = req.body;
+  const { game, image } = req.body;
 
   try {
     updateStatus(game, image);
@@ -10,6 +11,6 @@ router.post('/update', (req, res) => {
   } catch (error) {
     res.status(500).send(error);
   }
-})
+});
 
 module.exports = router;

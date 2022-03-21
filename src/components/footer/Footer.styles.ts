@@ -5,4 +5,4 @@ export const StyledFooter = styled.div`
   bottom: 0;
   width: 95vw;
   border-top: 1px solid white;
-  `;
+`;

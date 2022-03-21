@@ -1,19 +1,23 @@
 const RPC = require('discord-rpc');
+
 export const client = new RPC.Client({
-  transport: 'ipc'
+  transport: 'ipc',
 });
 
-export const discordLogin = () =>{
-  client.login({
-    clientId: '951962527087075338'
-  }).then(() => {
-    client.on('ready', () => {
-      console.log('Switch RPCX logged in');
+export const discordLogin = () => {
+  client
+    .login({
+      clientId: '951962527087075338',
     })
-  }).catch((error) => {
-    console.log(error);
-  })
-}
+    .then(() => {
+      client.on('ready', () => {
+        console.log('Switch RPCX logged in');
+      });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
 
 export const updateStatus = (game, image) => {
   client.setActivity({
@@ -25,5 +29,5 @@ export const updateStatus = (game, image) => {
     smallImageKey: 'switch',
     smallImageText: 'Online on Nintendo Switch',
     instance: true,
-  })
-}
+  });
+};

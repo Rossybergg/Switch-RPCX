@@ -7,13 +7,13 @@ export const StyledApp = styled.div`
   height: 99vh;
   padding: 0;
   margin: auto;
-  
-  .popular-games{
+
+  .popular-games {
     font-weight: bold;
     color: #18bdff;
   }
-  
-  .card-container{
+
+  .card-container {
     position: relative;
     padding: 5px;
     box-sizing: border-box;
@@ -21,4 +21,4 @@ export const StyledApp = styled.div`
     width: 100%;
     overflow-x: auto;
   }
-  `;
+`;

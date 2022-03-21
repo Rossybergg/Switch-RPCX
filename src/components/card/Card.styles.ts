@@ -8,10 +8,10 @@ export const StyledCard = styled.img`
   transition: 0.2s;
   border: 3px solid transparent;
   outline: 5px solid transparent;
-  
+
   :hover {
     border: 3px solid #2d2d2d;
     outline: 5px solid #18bdff;
     cursor: pointer;
   }
-  `;
+`;

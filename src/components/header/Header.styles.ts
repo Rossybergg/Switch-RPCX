@@ -5,8 +5,8 @@ export const StyledHeader = styled.div`
   height: 75px;
   overflow: hidden;
   margin-bottom: 20px;
-  
-  .logo-container{
+
+  .logo-container {
     position: relative;
     display: flex;
     justify-content: center;
@@ -14,14 +14,14 @@ export const StyledHeader = styled.div`
     height: 100%;
     width: 50px;
   }
-  
-  .logo-avatar{
+
+  .logo-avatar {
     position: relative;
     border: 2px solid #4e4e4e;
     background-color: dimgrey;
   }
-  
-  .header-text{
+
+  .header-text {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -34,8 +34,8 @@ export const StyledHeader = styled.div`
     padding: 10px;
     font-weight: bold;
   }
-  
-  .connection-container{
+
+  .connection-container {
     position: absolute;
     display: flex;
     justify-content: center;
