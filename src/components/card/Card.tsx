@@ -1,9 +1,14 @@
 import React from 'react';
+import Tooltip from '@mui/material/Tooltip';
 import { CardProps } from './Card.types';
 import { StyledCard } from './Card.styles';
 
 export const Card = (props: CardProps) => {
-  const { imageSrc, onClick } = props;
+  const { title, imageSrc, onClick } = props;
 
-  return <StyledCard alt="game" src={imageSrc} onClick={onClick} />;
+  return (
+    <Tooltip title={title}>
+      <StyledCard alt="game" src={imageSrc} onClick={onClick} />
+    </Tooltip>
+  );
 };
