@@ -20,7 +20,7 @@
     "@babel/core": "^7.17.8",
     "@babel/node": "^7.16.8",
     "@babel/preset-env": "^7.16.11",
-    "concurrently": "^7.0.0",
+    "concurrently": "^7.4.0",
     "customize-cra": "^1.0.0",
     "electron": "^17.1.2",
     "electron-builder": "^22.14.13",
